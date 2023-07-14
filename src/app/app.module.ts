@@ -16,6 +16,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
     LeaveFormComponent,
     AllRequestsComponent,
     PendingRequestsComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,9 @@ import { MatInputModule } from '@angular/material/input';
     MatNativeDateModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

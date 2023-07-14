@@ -1,6 +1,6 @@
 <mat-spinner *ngIf="isLoading"></mat-spinner>
 <div class="leave-form-outer" *ngIf="!isLoading">
-  <h2 style="color: rgb(1, 105, 233); margin-bottom: .5rem;">Leave Form</h2>
+  <h2 style="color: rgb(1, 105, 233); margin-bottom: 1rem;">Leave Form</h2>
   <form (ngSubmit)="onLeaveSubmit(leaveForm)" #leaveForm="ngForm">
     <mat-form-field appearance="fill" class="m-1">
       <mat-label>Enter a date range</mat-label>

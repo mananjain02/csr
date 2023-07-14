@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthInterceptor } from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AllRequestsComponent,
     PendingRequestsComponent,
     DialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatDialogModule,
     MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

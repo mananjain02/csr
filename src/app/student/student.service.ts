@@ -13,11 +13,11 @@ export class StudentService {
 
   sendLeaveRequest(startDate: Date, endDate: Date, reason: String) {
     console.log("leaveRequestSent");
-    // setTimeout(() => {
-    //   this.dialog.open(DialogComponent, {data: {message: "Submitted successfully!"}})
-    //   this.leaveFormLoading.next(false);
-    // }, 1000)
-    // return;
+    setTimeout(() => {
+      this.dialog.open(DialogComponent, {data: {message: "Submitted successfully!"}})
+      this.leaveFormLoading.next(false);
+    }, 1000)
+    return;
     const requestBody = {
       startDate: startDate,
       endDate: endDate,

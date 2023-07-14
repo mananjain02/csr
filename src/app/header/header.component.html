@@ -1,16 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand m-1" href="#">Holiday</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fix-top">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand m-1" href="/">Holiday</a>
+  </nav>
+  <button #toggleButton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav" *ngIf="role=='student'">
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto" *ngIf="role=='student' && authenticated">
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']">Create Request</a></li>
       <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/my-requests']">My Requests</a></li>
-    </div>
-    <div class="navbar-nav" *ngIf="role=='warden'">
+      <button class="btn btn-primary" (click)="onLogout()" disabled>Logout</button>
+    </ul>
+    <ul class="navbar-nav mr-auto" *ngIf="role=='warden' && authenticated">
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']">Pending Requests</a></li>
       <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/all-requests']">All requests</a></li>
-    </div>
+      <button class="btn btn-primary" (click)="onLogout()" disabled>Logout</button>
+    </ul>
   </div>
 </nav>

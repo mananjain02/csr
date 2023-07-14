@@ -1,0 +1,8 @@
+<div>
+  <div *ngIf="role=='student'">
+    <app-leave-form></app-leave-form>
+  </div>
+  <div *ngIf="role=='warden'">
+    <app-pending-requests></app-pending-requests>
+  </div>
+</div>

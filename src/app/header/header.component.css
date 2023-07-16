@@ -1,0 +1,10 @@
+.header-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#profile-icon {
+  margin: 0 .75rem 0 .75rem;
+  cursor: pointer;
+}

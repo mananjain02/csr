@@ -31,7 +31,11 @@ export class LeaveFormComponent implements OnInit, OnDestroy {
   onLeaveSubmit(leaveForm: NgForm) {
     if(leaveForm.invalid) return;
     this.isLoading = true;
-    this.studentService.sendLeaveRequest(leaveForm.value.startDate, leaveForm.value.endDate, leaveForm.value.reason)
+    const startDate = new Date(leaveForm.value.startDate);
+    const endDate = new Date(leaveForm.value.endDate);
+    startDate.setDate(startDate.getDate() + 1);
+    endDate.setDate(endDate.getDate() + 1);
+    this.studentService.sendLeaveRequest(startDate, endDate, leaveForm.value.reason)
   }
 
 }

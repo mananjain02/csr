@@ -8,18 +8,16 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [AuthService]
 })
 export class LoginComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   isLoadingSubscription: Subscription;
-  constructor(public authService: AuthService,
-    private router: Router) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.isLoadingSubscription = this.authService.getAuthProcessStatus()
-      .subscribe((response) => {
-        this.isLoading = response;
+      .subscribe((load) => {
+        this.isLoading = load;
       })
   }
 
@@ -29,7 +27,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onLogin(loginForm: NgForm) {
     if(loginForm.invalid) return;
-    this.router.navigate(['/']);
     this.isLoading = true;
     this.authService.loginUser(loginForm.value.username, loginForm.value.password);
   }

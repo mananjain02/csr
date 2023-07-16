@@ -8,10 +8,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  role: string;
+  role: String;
   // remove initialization once auth is ready
   authenticated: Boolean = true;
   authenticateSubscription: Subscription;
+  roleSubscription: Subscription;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((authStatus) => {
         this.authenticated = authStatus;
       })
-    this.role = localStorage.getItem("role");
+    this.roleSubscription = this.authService.getRoleObservable()
+      .subscribe((role) => {
+        this.role = role;
+      })
+    console.log("header role", this.role);
   }
 
   ngOnDestroy(): void {

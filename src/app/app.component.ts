@@ -9,9 +9,8 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'holiday';
-
+  constructor(private authService: AuthService) {}
   ngOnInit(): void {
-    localStorage.setItem("role", "student");
-    localStorage.setItem("userId", "1234567890");
+    this.authService.autoAuthUser();
   }
 }

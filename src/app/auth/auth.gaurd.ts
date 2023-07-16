@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { AuthService } from "./auth.service";
 
 @Injectable()
-export class AuthGaurd implements CanActivate{
+export class AuthGaurd implements CanActivate {
 
   constructor(private authService: AuthService,
     private router: Router) {}
@@ -12,6 +12,7 @@ export class AuthGaurd implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     const isAuthenticated =  this.authService.getAuthenticatedStatus();
     if(!isAuthenticated) {
+      console.log(isAuthenticated);
       this.router.navigate(['/login']);
     }
     return isAuthenticated;

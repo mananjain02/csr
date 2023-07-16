@@ -1,0 +1,22 @@
+button {
+  border-radius: 2rem;
+  border: none;
+  padding: .5rem 1rem .5rem 1rem;
+  margin: .2rem;
+  margin-top: 1rem;
+  margin-left: .4rem;
+}
+
+.button-selected {
+  background-color: skyblue;
+}
+
+table {
+  width: 90vw;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

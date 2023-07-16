@@ -1,1 +1,33 @@
-<p>edit-profile works!</p>
+<div class="profile-outer">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div *ngIf="!isLoading && !edit">
+    <h3 style="color: rgb(1, 105, 233); margin-bottom: 1rem;">Profile Information</h3>
+    <p>Name: {{ studentData.name }}</p>
+    <p>Phone Number: {{ studentData.phoneNumber }}</p>
+    <p>Address: {{ studentData.address }}</p>
+    <button type="button" (click)="onEdit()" class="btn btn-outline-success">Edit</button>
+  </div>
+
+  <form *ngIf="!isLoading && edit">
+    <h3 style="color: rgb(1, 105, 233); margin-bottom: 1rem;">Edit Profile Information</h3>
+    <mat-form-field class="m-1" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="editStudentData.name" name="name" required>
+    </mat-form-field>
+
+    <mat-form-field class="m-1" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput [(ngModel)]="editStudentData.phoneNumber" name="phoneNumber" required>
+    </mat-form-field>
+
+    <mat-form-field class="m-1" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="editStudentData.address" name="address" required>
+    </mat-form-field>
+
+    <div>
+      <button type="submit" (click)="onSubmit()" class="btn btn-outline-success">Save</button>
+      <button type="button" (click)="onCancel()" class="btn btn-outline-danger m-3">Cancel</button>
+    </div>
+  </form>
+</div>

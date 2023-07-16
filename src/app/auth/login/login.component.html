@@ -2,7 +2,7 @@
 
 <div class="login-form-outer" *ngIf="!isLoading">
   <h2 style="color: rgb(1, 105, 233); margin-bottom: 1rem;">Login</h2>
-  <form (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
     <mat-form-field class="m-1" appearance="fill">
       <mat-label>Username</mat-label>
       <input matInput ngModel name="username" #username="ngModel" required>

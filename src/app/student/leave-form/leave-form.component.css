@@ -18,6 +18,13 @@ form {
   justify-content: center;
 }
 
+.leave-form-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 mat-spinner {
   width: 100vw;
   align-items: center;

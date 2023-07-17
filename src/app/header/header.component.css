@@ -8,3 +8,11 @@
   margin: 0 .75rem 0 .75rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+  .header-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

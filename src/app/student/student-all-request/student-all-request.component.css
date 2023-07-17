@@ -6,6 +6,9 @@ button {
   margin-top: 1rem;
   margin-left: .4rem;
 }
+button:focus {
+  outline: none;
+}
 
 .button-selected {
   background-color: skyblue;
@@ -13,6 +16,10 @@ button {
 
 table {
   width: 90vw;
+}
+
+table td{
+  vertical-align: middle;
 }
 
 .table {

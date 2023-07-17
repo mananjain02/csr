@@ -6,18 +6,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto header-items" *ngIf="role && role=='student' && authenticated">
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']">Create Request</a></li>
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/my-requests']">My Requests</a></li>
-      <a [routerLink]="['/profile']" id="profile-icon"><img width="48px" src="assets/images/profile.png"></a>
-      <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+      <li class="nav-item m-1" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']" (click)="autoToggle()">Create Request</a></li>
+      <li class="nav-item m-1" routerLinkActive="active"><a class="nav-link" [routerLink]="['/my-requests']" (click)="autoToggle()">My Requests</a></li>
+      <a class="m-1" [routerLink]="['/profile']" id="profile-icon"><img width="48px" src="assets/images/profile.png" (click)="autoToggle()"></a>
+      <button class="btn btn-primary m-1" (click)="onLogout()">Logout</button>
     </ul>
-    <ul class="navbar-nav mr-auto" *ngIf="role && role=='warden' && authenticated">
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']">Pending Requests</a></li>
-      <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/all-requests']">All requests</a></li>
-      <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+    <ul class="navbar-nav mr-auto header-items" *ngIf="role && role=='warden' && authenticated">
+      <li class="nav-item m-1" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="nav-link" [routerLink]="['']" (click)="autoToggle()">Pending Requests</a></li>
+      <li class="nav-item m-1" routerLinkActive="active"><a class="nav-link" [routerLink]="['/all-requests']" (click)="autoToggle()">All requests</a></li>
+      <button class="btn btn-primary m-1" (click)="onLogout()">Logout</button>
     </ul>
-    <!-- <button class="btn btn-primary" (click)="onLogout()">Logout</button> -->
   </div>
 </nav>

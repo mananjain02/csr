@@ -13,6 +13,10 @@ table {
   width: 90vw;
 }
 
+table td{
+  vertical-align: middle;
+}
+
 .table {
   display: flex;
   justify-content: center;
@@ -36,3 +40,4 @@ table {
   align-items: center;
   margin-left: 1rem;
 }
+

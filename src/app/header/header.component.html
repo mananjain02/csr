@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand m-1">Holiday</a>
   </nav>
-  <button #toggleButton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button *ngIf="role" #toggleButton class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 

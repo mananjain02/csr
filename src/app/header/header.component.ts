@@ -61,6 +61,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onLogout() {
+    this.role = null;
     this.authService.logout()
     this.autoToggle();
   }

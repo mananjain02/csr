@@ -5,6 +5,7 @@ button {
   margin: .2rem;
   margin-top: 1rem;
   margin-left: .4rem;
+  text-decoration: none;
 }
 button:focus {
   outline: none;

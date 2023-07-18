@@ -107,7 +107,6 @@ export class AuthService {
 
   private saveAuthData(token: string, expirationDate: Date,  username: string, role: string) {
     console.log("saving auth data on local");
-    console.log(token, expirationDate.toISOString(), username, role);
     localStorage.setItem("token", token);
     localStorage.setItem("expiration", expirationDate.toISOString());
     localStorage.setItem("username", username);

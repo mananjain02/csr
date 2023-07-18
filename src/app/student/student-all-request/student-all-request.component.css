@@ -5,6 +5,10 @@ button {
   margin: .2rem;
   margin-top: 1rem;
   margin-left: .4rem;
+  color: black;
+}
+button:focus {
+  outline: none;
 }
 
 .button-selected {
@@ -13,6 +17,10 @@ button {
 
 table {
   width: 90vw;
+}
+
+table td{
+  vertical-align: middle;
 }
 
 .table {

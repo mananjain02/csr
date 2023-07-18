@@ -3,6 +3,7 @@
   border: none;
   padding: .5rem 1rem .5rem 1rem;
   margin-left: .4rem;
+  color: black;
 }
 
 .action-button {
@@ -11,6 +12,10 @@
 
 table {
   width: 90vw;
+}
+
+table td{
+  vertical-align: middle;
 }
 
 .table {
@@ -36,3 +41,4 @@ table {
   align-items: center;
   margin-left: 1rem;
 }
+

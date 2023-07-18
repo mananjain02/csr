@@ -26,6 +26,7 @@ export class PendingRequestsComponent implements OnInit, OnDestroy {
     this.pendingRequestDataSubscription = this.wardenService.getPendingRequestDataObservable()
       .subscribe((data) => {
         this.pendingRequestData = data;
+        this.pendingRequestData.reverse();
       })
     this.wardenService.getPendingRequestData(this.search);
   }

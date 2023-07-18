@@ -22,6 +22,7 @@ export class StudentAllRequestComponent implements OnInit, OnDestroy {
     this.studentRequestDataSubscription = this.studentService.getStudentRequestObservable()
       .subscribe((studentRequestData) => {
         this.tableData = studentRequestData;
+        this.tableData.reverse();
       })
     this.isLoadingSubscrition = this.studentService.getStudentRequestLoadingObservable()
       .subscribe((loading) => {

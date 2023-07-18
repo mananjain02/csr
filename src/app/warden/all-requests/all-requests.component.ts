@@ -27,6 +27,7 @@ export class AllRequestsComponent implements OnInit, OnDestroy {
     this.allRequestDataSubscription = this.wardenService.getAllRequestObservable()
       .subscribe((data) => {
         this.allRequestData = data;
+        this.allRequestData.reverse();
       })
     this.wardenService.getAllRequestData(this.search);
   }

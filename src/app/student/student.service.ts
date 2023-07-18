@@ -112,7 +112,7 @@ export class StudentService {
   getStudentRequestLoadingObservable() {
     return this.studentRequestLoading.asObservable();
   }
-
+  
   getStudentProfileLoadingObservable() {
     return this.studentProfileLoading.asObservable();
   }

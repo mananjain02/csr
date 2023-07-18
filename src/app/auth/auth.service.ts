@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   getRoleObservable() {
-    return this.roleSubject;
+    return this.roleSubject.asObservable();
   }
 
   loginUser(username: string, password: string) {

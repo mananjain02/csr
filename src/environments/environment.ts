@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendUrl: 'https://holiday-backend-production.up.railway.app'
+  backendUrl: 'https://holiday-backend-production-5c2e.up.railway.app'
 };
 
 /*
